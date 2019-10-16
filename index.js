@@ -2,6 +2,10 @@ const express=require('express');
 const port=8000;
 const app=express();
 
+const expressLayouts=require('express-ejs-layouts');
+
+app.use(expressLayouts);
+
 app.get('/',require('./routes'));
 //set up view engine
 app.set('view engine','ejs');
