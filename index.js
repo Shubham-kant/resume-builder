@@ -4,6 +4,7 @@ const app=express();
 
 
 const expressLayouts=require('express-ejs-layouts');
+const db=require('./config/mongoose');
 
 const sassMiddleware=require('node-sass-middleware');
 app.use(sassMiddleware({
@@ -20,7 +21,7 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-app.get('/',require('./routes'));
+app.use('/',require('./routes'));
 //set up view engine
 app.set('view engine','ejs');
 app.set('views','./views');
