@@ -3,7 +3,9 @@ var i=1;
 var j=1;
 var k=1;
 
-$('#ed-add-btn').click(function(){
+$('#ed-add-btn').click(function(e){
+
+    e.preventDefault();
     
     $("#education").append(`<div id="ed-${i}">
     <button class="remove-btn" id="ed-remove-btn">X</button>
@@ -21,11 +23,13 @@ $('#ed-add-btn').click(function(){
 
     i++;
 });
-$('#exp-add-btn').click(function(){
+$('#exp-add-btn').click(function(e){
     // var div=$('.info');
     // $('.common-sec').append(div);
     //div = document.createElement('div');
     //$(div).addClass("info").html('');
+    e.preventDefault();
+
     $("#exp").append(`<div id="exp-${j}">
     <button class="remove-btn" id="exp-remove-btn">X</button>
     <div class="info">
@@ -43,11 +47,13 @@ $('#exp-add-btn').click(function(){
     
     j++;
 });
-$('#project-add-btn').click(function(){
+$('#project-add-btn').click(function(e){
     // var div=$('.info');
     // $('.common-sec').append(div);
     //div = document.createElement('div');
     //$(div).addClass("info").html('');
+    e.preventDefault();
+
     $("#project").append(`<div id="project-${k}">
     <button class="remove-btn" id="project-remove-btn">X</button>
     <div class="info" >
@@ -78,5 +84,6 @@ $('#project-add-btn').click(function(){
 
 $(document).on('click','.remove-btn',function(e){
     //alert('hello');
+    e.preventDefault();
     $(this).parent('div').remove();
 });
