@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
-const experienceSchema=new mongooseSchema({
-    companyName:{
+const experienceSchema=new mongoose.Schema({
+    organisation:{
         type:String,
         required:true
     },

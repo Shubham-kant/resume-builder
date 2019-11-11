@@ -1,11 +1,11 @@
 const mongoose=require('mongoose');
 
-const educationSchema=new mongooseSchema({
+const educationSchema=new mongoose.Schema({
     degree:{
         type:String,
         required:true
     },
-    instituteName:{
+    institute:{
         type:String,
         required:true
     },

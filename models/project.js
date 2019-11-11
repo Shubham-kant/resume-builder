@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
-const projectSchema=new mongooseSchema({
-    name:{
+const projectSchema=new mongoose.Schema({
+    title:{
         type:String,
         required:true
     },
@@ -9,6 +9,10 @@ const projectSchema=new mongooseSchema({
         type:String,
         required:true
     },
+    link:{
+        type:String
+
+    }
     
 });
 const Project=mongoose.model('Project',projectSchema);

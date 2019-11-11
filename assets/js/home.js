@@ -11,13 +11,13 @@ $('#ed-add-btn').click(function(e){
     <button class="remove-btn" id="ed-remove-btn">X</button>
     <div class="info">
         <input type="text" name="degree" placeholder="degree" required>
-        <input type="text" name="college" placeholder="college or university name" required>
+        <input type="text" name="institute" placeholder="college or university name" required>
         
         <label for="start-date">Start Date</label>
-        <input type="date" name="start" id="start-date" value="2019-01-01" required>
+        <input type="date" name="edstart" id="start-date" value="2019-01-01" required>
         
         <label for="end-date">End Date</label>
-        <input type="date" name="end" id="end-date" value="2019-01-01" required>
+        <input type="date" name="edend" id="end-date" value="2019-01-01" required>
     </div>
 </div>`);
 
@@ -33,15 +33,15 @@ $('#exp-add-btn').click(function(e){
     $("#exp").append(`<div id="exp-${j}">
     <button class="remove-btn" id="exp-remove-btn">X</button>
     <div class="info">
-        <input type="text" name="name" placeholder="company name" required>
-        <textarea name="description" placeholder="describe what you have done in the company?" required rows="10"></textarea>
+        <input type="text" name="organisation" placeholder="company name" required>
+        <textarea name="exdescription" placeholder="describe what you have done in the company?" required rows="10"></textarea>
         <input type="text" name="designation" placeholder="deignation"  required>
         
         <label for="start-date">Start Date</label>
-        <input type="date" name="start" id="start-date" value="2019-01-01" required>
+        <input type="date" name="exstart" id="start-date" value="2019-01-01" required>
         
         <label for="end-date">End Date</label>
-        <input type="date" name="end" id="end-date" value="2019-01-01" required>
+        <input type="date" name="exend" id="end-date" value="2019-01-01" required>
     </div>
 </div>`);
     
@@ -57,10 +57,10 @@ $('#project-add-btn').click(function(e){
     $("#project").append(`<div id="project-${k}">
     <button class="remove-btn" id="project-remove-btn">X</button>
     <div class="info" >
-            <input type="text" name="project-name" placeholder="project's name" required>
+            <input type="text" name="title" placeholder="project's name" required>
             
-            <textarea name="project-description" placeholder="describe your project" required rows="10"></textarea>
-
+            <textarea name="projectdescription" placeholder="describe your project" required rows="10"></textarea>
+            <input type="url" name="link" placeholder="Ex: http://myprojectlink.com">
     </div>
 </div>`);
     

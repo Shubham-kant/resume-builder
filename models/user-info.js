@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const infoSchema=new mongooseSchema({
+const infoSchema=new mongoose.Schema({
     name:{
         type:String,
         required:true,

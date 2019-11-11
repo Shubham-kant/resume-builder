@@ -1,8 +1,9 @@
 const express=require('express');
 const router=express.Router();
-const homecontroller=require('../controllers/home_controller');
+const homeController=require('../controllers/home_controller');
 
-router.get('/',homecontroller.home);
+router.get('/',homeController.home);
+router.use('/resume',require('./resume'));
 
 console.log('router is working');
 module.exports=router;
