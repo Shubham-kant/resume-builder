@@ -1,7 +1,51 @@
 <link rel="stylesheet" href="/css/resume.css">
 <section id="root">
         <div id="page">
-            shubham
-            tony
+            <!-- <%= user %> -->
+            <hr class="resume-progress margin10">
+            <div id="basic-info" class="margin10">
+                <p id="name" ><%= user.name %></p>
+                <p id="email" class="info1"><%= user.email %></p>
+                <p id="description" class="info1"><%= user.description %></p>
+                <p id="phone" class="info1"><%= user.phone %>></p>
+            </div>
+            <hr class="margin10">
+            <div id="education-container" class="margin10">
+            <% for(var edu of user.education){ %>
+                <h2 class="heading">Education</h2>
+                <span class="title"><%= edu.degree %></span>
+                
+                (<span ><%= edu.startDate %>-</span>
+                <span ><%= edu.endDate %></span>)
+                <p class="info"><%= edu.institute %></p>
+
+            <% } %>
+           </div>
+           <hr class="margin10">
+           <div id="experience-container" class="margin10">
+                <% for(var exp of user.experience){ %>
+                    <h2 class="heading">Experience</h2>
+                    <p class="title"><%= exp.designation %></p>
+                    <span class="info"><%= exp.organisation %></span>
+                    
+                    
+                    (<span class="info"><%= exp.startDate %>-</span>
+                    <span class="info"><%= exp.endDate %></span>)
+                    <p class="info"><%= exp.description %></p>
+        
+                <% } %>
+            </div>
+            <hr class="margin10">
+            <div id="project-container" class="margin10">
+                <% for(var pro of user.project){ %>
+                    <h2 class="heading">Projects</h2>
+                    <p class="title"><%= pro.title %></p>
+                    <a href="<%= pro.link %>"><%= pro.link %></a>
+                    <p class="info"><%= pro.description %></p>
+                    
+        
+                <% } %>  
+            </div>         
+            
         </div>
 </section>

@@ -1,4 +1,5 @@
 const express=require('express');
+const cookieParser=require('cookie-parser');
 const port=8000;
 const app=express();
 
@@ -10,6 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const expressLayouts=require('express-ejs-layouts');
 const db=require('./config/mongoose');
 
+
+
 const sassMiddleware=require('node-sass-middleware');
 app.use(sassMiddleware({
     src:'./assets/scss',
@@ -18,7 +21,8 @@ app.use(sassMiddleware({
     outputStyle:'extended',
     prefix:'/css'
 }))
-
+app.use(express.urlencoded());
+app.use(cookieParser());
 app.use(express.static('assets'));
 app.use(expressLayouts);
 

@@ -9,15 +9,27 @@ const experienceSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    designation:{
+        type:String,
+        required:true
+
+    },
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        //name of model to be linked
+        ref:'Info'
+    },
     startDate:{
-        type:Date,
+        type:String,
         required:true
     },
     endDate:{
-        type:Date,
+        type:String,
         required:true
 
     }
+},{
+    timestamps:true
 });
 const Experience=mongoose.model('Experience',experienceSchema);
 module.exports=Experience;

@@ -18,6 +18,7 @@ $('#ed-add-btn').click(function(e){
         
         <label for="end-date">End Date</label>
         <input type="date" name="edend" id="end-date" value="2019-01-01" required>
+        <input type="hidden" name="user" value="<%= user._id %>">
     </div>
 </div>`);
 
@@ -42,6 +43,7 @@ $('#exp-add-btn').click(function(e){
         
         <label for="end-date">End Date</label>
         <input type="date" name="exend" id="end-date" value="2019-01-01" required>
+        <input type="hidden" name="user" value="<%= user._id %>">
     </div>
 </div>`);
     
@@ -61,6 +63,7 @@ $('#project-add-btn').click(function(e){
             
             <textarea name="projectdescription" placeholder="describe your project" required rows="10"></textarea>
             <input type="url" name="link" placeholder="Ex: http://myprojectlink.com">
+            <input type="hidden" name="user" value="<%= user._id %>">
     </div>
 </div>`);
     

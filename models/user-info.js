@@ -17,8 +17,26 @@ const infoSchema=new mongoose.Schema({
     phone:{
         type:Number,
         unique:true
-    }
+    },
+    education:[{
+        type:mongoose.Schema.Types.ObjectId,
+        //name of model to be linked
+        ref:'Education'
+    }],
+    experience:[{
+        type:mongoose.Schema.Types.ObjectId,
+        //name of model to be linked
+        ref:'Experience'
+    }],
+    project:[{
+        type:mongoose.Schema.Types.ObjectId,
+        //name of model to be linked
+        ref:'Project'
+    }]
 
-});
+
+},
+{timestamps:true}
+);
 const Info=mongoose.model('Info',infoSchema);
 module.exports=Info;

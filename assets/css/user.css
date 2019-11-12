@@ -1,0 +1,32 @@
+div form {
+  width: 90%;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 4px;
+  background: white;
+  padding: 20px;
+  margin: auto; }
+  div form h2 {
+    font-family: sans-serif; }
+  div form .info input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3e64ff;
+    margin: 25px 0;
+    color: black;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px; }
+  div form input[type="submit"] {
+    background-color: #ff3f98;
+    color: white;
+    font-size: 0.8rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-top: 0.5rem;
+    width: 35%;
+    padding: 0.7rem;
+    font-family: sans-serif;
+    border-radius: 3%; }

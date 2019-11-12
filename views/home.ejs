@@ -2,16 +2,8 @@
 
 <div>
     
-    <form action="/resume/create" method="POST">
-        <section id="user-info">
-            <h2>info</h2>
-            <div class="info" >
-                <input type="text" name="name" placeholder="your name" required>
-                <input type="email" name="email" placeholder="your email-id" required>
-                <input type="text" name="description" placeholder="tell me about yourself" required>
-                <input type="tel" name="phone" placeholder="your phone number" required>
-            </div>
-        </section>
+    <form action="/home/resume/create" method="POST">
+        
         <section id="education" class="common-sec">
             <div class="util">
                 <h2>Education</h2>
@@ -28,6 +20,8 @@
                     
                     <label for="end-date">End Date</label>
                     <input type="date" name="edend" id="end-date" value="2019-01-01" required>
+                    <input type="hidden" name="user" value="<%= user._id %>">
+
                 </div>
             </div>
 
@@ -49,6 +43,7 @@
                     
                     <label for="end-date">End Date</label>
                     <input type="date" name="exend" id="end-date" value="2019-01-01" required>
+                    <input type="hidden" name="curuser" value="<%= user._id %>">
                 </div>
             </div>
 
@@ -68,6 +63,7 @@
                         
                         <textarea name="projectdescription" placeholder="describe your project" required rows="10"></textarea>
                         <input type="url" name="link" placeholder="Ex: http://myprojectlink.com">
+                        <input type="hidden" name="user" value="<%= user._id %>">
                 </div>
             </div>
 

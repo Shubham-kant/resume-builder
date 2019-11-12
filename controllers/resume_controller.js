@@ -9,54 +9,93 @@ module.exports.create=function(req,res){
     console.log(req.body);
     // console.log(req.body.phone);
     // console.log(req.params.phone);
-    userInfo.create({
-        name:req.body.name,
-        email:req.body.email,
-        description:req.body.description,
-        phone:req.body.phone
+    console.log(req.body.curuser);
+    res.cookie('user_id',req.body.curuser);
+    
+    userInfo.findById(req.body.curuser,function(err,current_user){
+        if(err){
+             console.log('error in fetching user info ');
+             return;
+         }
+         if(current_user){
+            Education.create({
+                degree:req.body.degree,
+                institute:req.body.institute,
+                startDate:req.body.edstart,
+                endDate:req.body.edend,
+                user:req.body.curuser
+            },function(err,userEducation){
+                if(err){
+                    console.log("error in populating education DB");
+                    return;
+                }
+                current_user.education.push(userEducation);
+                
+            });
+            Experience.create({
+                organisation:req.body.organisation,
+                description:req.body.exdescription,
+                designation:req.body.designation,
+                startDate:req.body.exstart,
+                endDate:req.body.exend,
+                user:req.body.curuser
+            },function(err,userExperience){
+                if(err){
+                    console.log("error in populating experience DB");
+                    return;
+                }
+                current_user.experience.push(userExperience);
+                
+            });
+            Project.create({
+                title:req.body.title,
+                description:req.body.projectdescription,
+                link:req.body.link,
+                user:req.body.curuser
+                
+            },function(err,userProject){
+                if(err){
+                    console.log("error in populating project DB");
+                    return;
+                }
+                current_user.project.push(userProject);
+                current_user.save();
+                
+            });
+            
 
-    },function(err){
-        if(err){
-            console.log('error in populating user info db');
-            return;
-        }
-    });
-    Education.create({
-        degree:req.body.degree,
-        institute:req.body.institute,
-        startDate:req.body.edstart,
-        endDate:req.body.edend
-    },function(err){
-        if(err){
-            console.log("error in populating education DB");
-            return;
-        }
-    });
-    Experience.create({
-        organisation:req.body.organisation,
-        description:req.body.exdescription,
-        startDate:req.body.exstart,
-        endDate:req.body.exend
-    },function(err){
-        if(err){
-            console.log("error in population experience DB");
-            return;
-        }
-    });
-    Project.create({
-        title:req.body.title,
-        description:req.body.projectdescription,
-        link:req.body.link
-        
-    },function(err){
-        if(err){
-            console.log("error in population project DB");
-            return;
-        }
-    });
+         }
+     });
 
-    return res.redirect('back');
+    
+    
+
+    return res.redirect('/home/resume');
 }
-module.exports.fetch=function(req,res){
-    return res.render('resume');
+module.exports.resumePage=function(req,res){
+    console.log("resumepage",req.cookies);
+    // userInfo.findOne({email:req.cookies.user_email},function(err,user){
+    //     if(err){
+    //         console.log('error in sending user info to home');
+    //         return;
+    //     }
+    //     return res.render('resume',{
+    //         user:user
+    //     });
+    // });
+    userInfo.findOne({email:req.cookies.user_email})
+    .populate('education')
+    .populate('experience')
+    .populate('project')
+    .exec(function(err,user){
+        if(err){
+            console.log("error in displaying info");
+            return;
+        }
+        return res.render('resume',{
+            user:user
+        });
+    })
+    
+
 }
