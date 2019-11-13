@@ -1,6 +1,8 @@
+body{
+    background-color:#2623e8;
 div{
     
-    
+    background-color:#2623e8;
     form{
         width:90%;
         min-width:300px;
@@ -9,13 +11,18 @@ div{
         background:white;
         padding:20px;
         margin:auto;
+        .common{
+            background:white;
+        }
         h2{
             font-family:sans-serif;
+            background:white;
         }
       
         
        
     .info{
+        background:white;
         input{
             width:100%;
             outline:none;
@@ -43,6 +50,7 @@ div{
         }
     } 
     .util{
+        background:white;
         display:flex;
         flex-direction:row;
         justify-content: space-between;
@@ -70,6 +78,7 @@ div{
     }
     .remove-btn{
         outline: 0;
+        
             cursor: pointer;
             
             border: 0;
@@ -106,4 +115,5 @@ div{
         
     }
     }
+}
 }

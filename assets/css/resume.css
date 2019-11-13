@@ -4,12 +4,10 @@ body {
     background-color: grey;
     height: auto;
     width: 100%;
-    margin-right: auto;
-    box-sizing: border-box;
-    margin-left: auto; }
+    box-sizing: border-box; }
     body #root #page {
       background-color: white;
-      width: 60vw;
+      width: 70vw;
       box-sizing: border-box;
       margin: auto; }
       body #root #page .resume-progress {
