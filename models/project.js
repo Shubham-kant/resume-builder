@@ -9,14 +9,15 @@ const projectSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    
+    link:{
+        type:String
+
+    },
     user:{
         type:mongoose.Schema.Types.ObjectId,
         //name of model to be linked
         ref:'Info'
-    },
-    link:{
-        type:String
-
     }
     
 },{

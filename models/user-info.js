@@ -32,6 +32,11 @@ const infoSchema=new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         //name of model to be linked
         ref:'Project'
+    }],
+    socialLink:[{
+        type:mongoose.Schema.Types.ObjectId,
+        //name of model to be linked
+        ref:'Social'
     }]
 
 

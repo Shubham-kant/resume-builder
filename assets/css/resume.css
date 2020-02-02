@@ -26,12 +26,18 @@ body {
         line-height: 1.5px; }
       body #root #page .title {
         line-height: 2.5px; }
-      body #root #page #basic-info #name {
-        font-size: 2rem;
-        font-family: arial; }
-      body #root #page #basic-info .info {
-        font-size: 1rem;
-        font-family: arial; }
+      body #root #page #info-social-links {
+        display: flex;
+        justify-content: space-between; }
+        body #root #page #info-social-links #basic-info #name {
+          font-size: 2rem;
+          font-family: arial; }
+        body #root #page #info-social-links #basic-info .info {
+          font-size: 1rem;
+          font-family: arial; }
+        body #root #page #info-social-links #social-links {
+          margin-right: 2.5rem;
+          margin-top: 2.5rem; }
       body #root #page #project-container a {
         color: blue;
         cursor: pointer;

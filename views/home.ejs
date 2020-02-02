@@ -16,11 +16,11 @@
                     <input type="text" name="institute" placeholder="college or university name" required>
                     
                     <label for="start-date">Start Date</label>
-                    <input type="date" name="edstart" id="start-date" value="2019-01-01" required>
+                    <input type="date" name="edstart" id="ed-start-date" value="2019-01-01" required>
                     
                     <label for="end-date">End Date</label>
-                    <input type="date" name="edend" id="end-date" value="2019-01-01" required>
-                    <input type="hidden" name="user" value="<%= user._id %>">
+                    <input type="date" name="edend" id="ed-end-date" value="2019-01-01" required>
+                    
 
                 </div>
             </div>
@@ -39,11 +39,11 @@
                     <input type="text" name="designation" placeholder="deignation"  required>
                     
                     <label for="start-date">Start Date</label>
-                    <input type="date" name="exstart" id="start-date" value="2019-01-01" required>
+                    <input type="date" name="exstart" id="ex-start-date" value="2019-01-01" required>
                     
                     <label for="end-date">End Date</label>
-                    <input type="date" name="exend" id="end-date" value="2019-01-01" required>
-                    <input type="hidden" name="curuser" value="<%= user._id %>">
+                    <input type="date" name="exend" id="ex-end-date" value="2019-01-01" required>
+                    
                 </div>
             </div>
 
@@ -63,11 +63,29 @@
                         
                         <textarea name="projectdescription" placeholder="describe your project" required rows="10"></textarea>
                         <input type="url" name="link" placeholder="Ex: http://myprojectlink.com">
-                        <input type="hidden" name="user" value="<%= user._id %>">
+                        
                 </div>
             </div>
 
         </section>
+        <section id="social-links" class="common-sec">
+            <div class="util">
+                <h2>Social Links</h2>
+                <button class="add-btn" id="social-link-add-btn">+</button>
+            </div>
+            <div id="social-links-0" class="common">
+                <button class="remove-btn" id="social-link-remove-btn">X</button>
+                <div class="info" >
+                        
+                    <input type="text" name="linktitle" placeholder="title" required>
+                        <input type="url" name="userlink" placeholder="Ex: github.com or linkedin.com">
+                        
+                </div>
+            </div>
+
+
+        </section>
+        <input type="hidden" name="curuser" value="<%= user._id %>">
         <input type="submit" value="SAVE">
     </form>
 </div>

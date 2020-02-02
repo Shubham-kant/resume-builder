@@ -19,7 +19,7 @@ body{
         margin:auto;
         
         
-        
+       
         .resume-progress{
             
             height:7px;
@@ -47,19 +47,33 @@ body{
     .title{
         line-height:2.5px;
     }
+    #info-social-links{
+        display:flex;
+        justify-content: space-between;
+        #basic-info{
+            #name{
+                font-size:2rem;
+                font-family:arial;
+                
+            }
+            .info{
+                font-size:1rem;
+                font-family:arial;
     
-    #basic-info{
-        #name{
-            font-size:2rem;
-            font-family:arial;
+            }
+        }
+        #social-links{
+            margin-right:2.5rem;
+            margin-top:2.5rem;
+            #link-title{
+
+            }
             
         }
-        .info{
-            font-size:1rem;
-            font-family:arial;
 
-        }
+
     }
+    
     #education-container{
         
         

@@ -2,6 +2,7 @@ const userInfo=require('../models/user-info');
 const Education=require('../models/education');
 const Experience=require('../models/experience');
 const Project=require('../models/project');
+const Social=require('../models/social-link');
 
 
 module.exports.create=function(req,res){
@@ -18,6 +19,7 @@ module.exports.create=function(req,res){
              return;
          }
          if(current_user){
+             console.log(current_user);
             Education.create({
                 degree:req.body.degree,
                 institute:req.body.institute,
@@ -30,6 +32,8 @@ module.exports.create=function(req,res){
                     return;
                 }
                 current_user.education.push(userEducation);
+                
+                
                 
             });
             Experience.create({
@@ -46,6 +50,23 @@ module.exports.create=function(req,res){
                 }
                 current_user.experience.push(userExperience);
                 
+                
+                
+                
+            });
+            Social.create({
+                link:req.body.userlink,
+                name:req.body.linktitle,
+                user:req.body.curuser
+            },function(err,userLink){
+                if(err){
+                    console.log("error in populating the links");
+                    return;
+
+                }
+                current_user.socialLink.push(userLink);
+                
+                
             });
             Project.create({
                 title:req.body.title,
@@ -61,7 +82,13 @@ module.exports.create=function(req,res){
                 current_user.project.push(userProject);
                 current_user.save();
                 
+                
+            
             });
+            
+            
+            
+            
             
 
          }
@@ -86,6 +113,7 @@ module.exports.resumePage=function(req,res){
     userInfo.findOne({email:req.cookies.user_email})
     .populate('education')
     .populate('experience')
+    .populate('socialLink')
     .populate('project')
     .exec(function(err,user){
         if(err){
