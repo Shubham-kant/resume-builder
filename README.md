@@ -13,3 +13,4 @@ Resume Builder is a web app that simplifies the task of creating a resume.Indivi
 * Then cd resume-builder 
 * npm install
 * npm start
+* Visit your app at http://localhost:8000.
