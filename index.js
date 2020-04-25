@@ -1,6 +1,6 @@
 const express=require('express');
 const cookieParser=require('cookie-parser');
-const port=8000;
+const port=process.env.PORT || 8000;
 const app=express();
 
 const bodyParser=require('body-parser');
